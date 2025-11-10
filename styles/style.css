@@ -61,7 +61,7 @@ footer img {
   background-color: #f5f0e6;
   padding: 20px;
   margin: 45px;
-  transform: rotate(-10deg); /* сильный наклон налево */
+  transform: rotate(-5deg); /* сильный наклон налево */
   transform-origin: center;
 }
 
@@ -70,7 +70,7 @@ footer img {
   background-color: #e6f5f0;
   padding: 20px;
   margin: 45px;
-  transform: rotate(10deg); /* наклон направо */
+  transform: rotate(5deg); /* наклон направо */
   transform-origin: center;
 }
 
@@ -79,7 +79,7 @@ footer img {
   background-color: #f0e6f5;
   padding: 20px;
   margin: 45px;
-  transform: rotate(-10deg); /* сильный наклон налево */
+  transform: rotate(-5deg); /* сильный наклон налево */
   transform-origin: center;
 }
 

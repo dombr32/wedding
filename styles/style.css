@@ -63,6 +63,7 @@ footer img {
   margin: 45px;
   transform: rotate(-5deg); /* сильный наклон налево */
   transform-origin: center;
+  width: fit-content
 }
 
 .item2 {
@@ -72,23 +73,26 @@ footer img {
   margin: 45px;
   transform: rotate(5deg); /* наклон направо */
   transform-origin: center;
+  width: fit-content
 }
 
 .item3 {
-  border: 1px solid wheat;
-  background-color: #f0e6f5;
-  padding: 20px;
-  margin: 45px;
-  transform: rotate(-5deg); /* сильный наклон налево */
-  transform-origin: center;
+border: 1px solid wheat;
+background-color: #f0e6f5;
+padding: 20px;
+margin: 45px;
+transform: rotate(-5deg); /* сильный наклон налево */
+transform-origin: center;
+width: fit-content
 }
 
 .item4 {
-  border: 1px solid wheat;
-  background-color: #d4d6f3;
-  padding: 20px;
-  margin: 25px;
-  transform-origin: center;
+    border: 1px solid wheat;
+    background-color: #d4d6f3;
+    padding: 20px;
+    margin: 25px;
+    transform-origin: center;
+    width: fit-content
 }
 
 .item4 a{

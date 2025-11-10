@@ -106,4 +106,40 @@ footer img {
   transform: rotate(10deg);  /* обратный наклон для item3 */
 }
 
+#envelope {
+    cursor: pointer;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#envelope img {
+    max-width: 200px;
+    max-height: 150px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
 
+#envelope img.active {
+    opacity: 1;
+    position: relative;
+}
+
+#invite-content {
+    opacity: 0;
+    pointer-events: none;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    transition: opacity 1.5s ease;
+    font-size: 18px;
+    color: #333;
+}
+
+#invite-content.visible {
+    opacity: 1;
+    pointer-events: auto;
+}

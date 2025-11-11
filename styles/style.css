@@ -1,9 +1,11 @@
 body {
-    font-family: 'Georgia', serif;
+    /* font-family: 'Georgia', serif; */
+    font-family: "Pacifico", cursive;
     /* background-color: #fff8f0; */
-    background-image: url('../images/background.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-image: url('../images/background.webp'); */
+    background-image: url('../images/bac1.png');
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     background-position: 80% center;
     color: #5a3e36;
     margin: 0; 
@@ -26,7 +28,7 @@ h2 {
 p {
     font-size: 22px;
     max-width: 600px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 a {
@@ -57,49 +59,52 @@ footer img {
 }
 
 .item1 {
-  border: 1px solid wheat;
-  background-color: #f5f0e6;
-  padding: 20px;
-  margin: 45px;
-  transform: rotate(-5deg); /* сильный наклон налево */
-  transform-origin: center;
-  width: fit-content
+    border: 1px solid wheat;
+    background-color: rgba(245, 240, 230, 0.8);
+    padding: 20px;
+    margin: 45px auto;
+    transform: rotate(-3deg); /* сильный наклон налево */
+    transform-origin: center;
+    width: fit-content;
+    border-radius: 30px
 }
 
 .item2 {
-  border: 1px solid wheat;
-  background-color: #e6f5f0;
-  padding: 20px;
-  margin: 45px;
-  transform: rotate(5deg); /* наклон направо */
-  transform-origin: center;
-  width: fit-content
+    border: 1px solid wheat;
+    background-color: rgba(230, 245, 240, 0.8);
+    padding: 20px;
+    margin: 45px auto;;
+    transform: rotate(3deg); /* наклон направо */
+    transform-origin: center;
+    width: fit-content;
+    border-radius: 30px
 }
 
 .item3 {
-border: 1px solid wheat;
-background-color: #f0e6f5;
-padding: 20px;
-margin: 45px;
-transform: rotate(-5deg); /* сильный наклон налево */
-transform-origin: center;
-width: fit-content
+    border: 1px solid wheat;
+    background-color: rgba(240, 230, 245, 0.8);
+    padding: 20px;
+    margin: 45px auto;;
+    transform: rotate(-3deg); /* сильный наклон налево */
+    transform-origin: center;
+    width: fit-content;
+    border-radius: 30px
 }
 
 .item4 {
     border: 1px solid wheat;
-    background-color: #d4d6f3;
+    background-color: rgba(212, 214, 243, 0.8);
     padding: 20px;
-    margin: 25px;
+    margin: 25px auto;
     transform-origin: center;
-    width: fit-content
+    width: fit-content;
+    border-radius: 30px
 }
 
 .item4 a{
     font-size: 28px;
 }
 
-/* Чтобы текст был без наклона — компенсируем внутри */
 .item1 > div, .item2 > div, .item3 > div {
   transform: rotate(40deg);  /* обратный наклон для item1 */
 }

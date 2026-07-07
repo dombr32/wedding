@@ -2,47 +2,60 @@ const envelope = document.getElementById('envelope');
 const closedImg = document.getElementById('envelope-closed');
 const openedImg = document.getElementById('envelope-opened');
 const inviteContent = document.getElementById('invite-content');
+const rsvpEndpoint = 'https://wedding-rsvp.ramandambrouski.workers.dev';
 
 envelope.addEventListener('click', () => {
-closedImg.classList.remove('active');
-openedImg.classList.add('active');
+    closedImg.classList.remove('active');
+    openedImg.classList.add('active');
 
-setTimeout(() => {
-    envelope.style.display = 'none';
-    inviteContent.style.display = 'block';
-    inviteContent.classList.add('visible');
-}, 1000);
+    setTimeout(() => {
+        envelope.style.display = 'none';
+        inviteContent.style.display = 'block';
+        inviteContent.classList.add('visible');
+    }, 1000);
 });
 
 
-document.getElementById('myForm').addEventListener('submit', function(e) {
+document.getElementById('myForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
+    const form = e.target;
+    const submitButton = form.querySelector('button[type="submit"]');
     const formData = new FormData(e.target);
-    const attendance = formData.get('attendance');
-    const name = formData.get('name');
-    const comment = formData.get('comment');
 
-    const botToken = '8028551885:AAG9peBsjpohy2tjtV7SmrwCD0pHNwse9gA';
-    const chatId = -1003415517742;
-    const message = `Гость: ${name}\nОтветил: ${attendance}\nКомментарии: ${comment}`;
+    if (rsvpEndpoint.includes('YOUR-WORKER-NAME')) {
+        alert('Нужно указать адрес Cloudflare Worker в script/script.js');
+        return;
+    }
 
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправляем...';
+
+    try {
+        const response = await fetch(rsvpEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                attendance: formData.get('attendance'),
+                comment: formData.get('comment'),
+                website: formData.get('website')
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+
         alert('Сообщение отправлено!');
-    })
-    .catch(error => {
+        form.reset();
+    } catch (error) {
         alert('Ошибка при отправке сообщения');
         console.error(error);
-    });
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Отправить';
+    }
 });

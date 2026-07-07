@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="images/rings.png">
-  <title>Приглашение на свадьбу</title>
-  <link rel="stylesheet" href="styles/style.css" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/rings.png">
+    <title>Белорусская свадьба | Евгений и Виолетта</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="envelope" title="Нажмите, чтобы открыть приглашение">
+        <div class="ornament-strip" aria-hidden="true"></div>
         <img src="images/envelope.png" alt="Закрытый конверт" id="envelope-closed" class="active">
         <img src="images/email.png" alt="Открытый конверт" id="envelope-opened">
+        <p class="envelope-text">Откройте приглашение</p>
     </div>
 
     <div id="invite-content" style="display:none;">
         <div class="head1">
-            <h1>Евгений<br><img src="images/hearts.png"><br> Виолетта</h1>
-            <p>Мы счастливы пригласить Вас на торжество, посвященное нашей свадьбе!</p>
+            <span class="kicker">Белорусская свадьба</span>
+            <h1>Евгений<br><img src="images/hearts.png" alt=""><br> Виолетта</h1>
+            <p>Сердечно приглашаем Вас на торжество, посвященное нашей свадьбе!</p>
         </div>
     
         <div class="item1">
@@ -31,7 +34,7 @@
         
         <div class="item2">
             <h2>Место проведения</h2>
-            <p>База отдыха «Березка» Бобруйский район, Сычковский сельсовет 20</p>
+            <p>База отдыха «Березка», Бобруйский район, Сычковский сельсовет 20</p>
             <a href="https://yandex.by/maps/-/CLCRFZ7U" target="_blank">посмотреть на карте</a>
         </div>
 
@@ -47,11 +50,31 @@
             <a href="tel:+375293470462">Женя</a>
         </div>
         
-        
+        <form id="myForm">
+            <p>Ваше имя и фамилия</p>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <p>Ваше присутствие</p>
+            <label>
+                <input type="radio" name="attendance" value="будет" required>
+                С удовольствием буду!
+            </label><br>
+            <label>
+                <input type="radio" name="attendance" value="будет +1 рот">
+                Приду с парой
+            </label><br>
+            <label>
+                <input type="radio" name="attendance" value="слился">
+                К сожалению, не смогу
+            </label><br>
+            <p>Комментарии</p>
+            <textarea name="comment" rows="4" placeholder="Введите ваши комментарии"></textarea>
+            <br>
+            <button type="submit">Отправить</button>
+        </form>
         
         <footer>
             <p>
-                P.S. Будем рады, если вы поддержите цветовую гамму нашей свадьбы 
+                P.S. Будем рады, если вы поддержите цветовую гамму нашей свадьбы: белый, красный, зеленый и немного праздничного золота.
                 <br><br>
                 P.P.S. Пожалуйста не дарите нам живые цветы, мы не успеем насладиться их красотой, вместо этого мы будем рады бутылочке вашего любимого алкогольного напитка, которую мы откроем в важную для нас дату 
                 <br><br>
@@ -59,7 +82,7 @@
                 <br>
             </p>
            
-            <img src="images/kiss.png">
+            <img src="images/kiss.png" alt="">
         </footer>
     </div>
 
